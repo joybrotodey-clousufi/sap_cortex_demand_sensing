@@ -16,6 +16,8 @@ view: correlation_table_pdt {
                 AND SalesOrders.ShipToPartyItem_KUNNR = Customers.CustomerNumber_KUNNR
             WHERE
               SalesOrders.Client_MANDT = "@{CLIENT}"
+
+
           )
 
         SELECT DISTINCT Sales.Product,
