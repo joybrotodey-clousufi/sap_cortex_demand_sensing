@@ -25,7 +25,7 @@
   },
       "models": [
         {
-            "name": "cortex_demand_sensing",
+            "name": "sap_cortex_demand_sensing",
             "connection_constant": "CONNECTION_NAME"
         }
     ]

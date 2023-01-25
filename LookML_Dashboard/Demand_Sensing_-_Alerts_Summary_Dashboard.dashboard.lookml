@@ -3,11 +3,11 @@
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
-  preferred_slug: G7KplpivR8TpPnKtIflDT4
+  preferred_slug: lda8e5UBDPMEQsW3EUmsNT
   elements:
   - title: Untitled
     name: Untitled
-    model: cortex_demand_sensing
+    model: sap_cortex_demand_sensing
     explore: demand_sensing_summary
     type: looker_grid
     fields: [demand_sensing_summary.product_name, demand_sensing_summary.customer,
@@ -85,7 +85,7 @@
     ui_config:
       type: dropdown_menu
       display: inline
-    model: cortex_demand_sensing
+    model: sap_cortex_demand_sensing
     explore: demand_sensing_summary
     listens_to_filters: []
     field: demand_sensing_summary.product_name
@@ -98,7 +98,7 @@
     ui_config:
       type: dropdown_menu
       display: inline
-    model: cortex_demand_sensing
+    model: sap_cortex_demand_sensing
     explore: demand_sensing_summary
     listens_to_filters: []
     field: demand_sensing_summary.customer
@@ -111,7 +111,7 @@
     ui_config:
       type: dropdown_menu
       display: inline
-    model: cortex_demand_sensing
+    model: sap_cortex_demand_sensing
     explore: demand_sensing_summary
     listens_to_filters: []
     field: demand_sensing_summary.location
@@ -125,10 +125,6 @@
       type: relative_timeframes
       display: inline
       options: []
-    model: cortex_demand_sensing
-    explore: demand_sensing_summary
-    listens_to_filters: []
-    field: demand_sensing_summary.date_week
   - name: Alert Type
     title: Alert Type
     type: field_filter
@@ -138,7 +134,7 @@
     ui_config:
       type: dropdown_menu
       display: inline
-    model: cortex_demand_sensing
+    model: sap_cortex_demand_sensing
     explore: demand_sensing_summary
     listens_to_filters: []
     field: demand_sensing_summary.alert_dashboard_link

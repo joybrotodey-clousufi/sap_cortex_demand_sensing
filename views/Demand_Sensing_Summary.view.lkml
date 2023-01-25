@@ -144,7 +144,7 @@ where NonSeasonalTrendsImpactScore > 0)
   dimension: alert_dashboard_link {
     type: string
     sql: ${TABLE}.alert_dashboard_link ;;
-    html: <a href="/dashboards/cortex_demand_sensing::{{url_field._value}}?Product+Name={{ product_name._value }}&Customer={{ customer._value }}&Ship+To+Location={{location._value}}" target="_blank">{{value}}</a>;;
+    html: <a href="/dashboards/sap_cortex_demand_sensing::{{url_field._value}}?Product+Name={{ product_name._value }}&Customer={{ customer._value }}&Ship+To+Location={{location._value}}" target="_blank">{{value}}</a>;;
     }
 
     dimension: url_field {

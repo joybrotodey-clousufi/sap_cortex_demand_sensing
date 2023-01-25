@@ -3,11 +3,11 @@
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
-  preferred_slug: 24XdrbLG4S70E0exyBf44q
+  preferred_slug: RM0SXyCACF9LLBQ7EEYKXy
   elements:
   - title: Google Trends Insights
     name: Google Trends Insights
-    model: cortex_demand_sensing
+    model: sap_cortex_demand_sensing
     explore: demand_sensing
     type: looker_line
     fields: [demand_sensing.date_week, average_of_interest_over_time, demand_sensing.wholesale_quantity_measure,
@@ -84,13 +84,12 @@
     height: 9
   - title: Forecast Outside Statistical Range
     name: Forecast Outside Statistical Range
-    model: cortex_demand_sensing
+    model: sap_cortex_demand_sensing
     explore: demand_sensing
     type: looker_line
     fields: [demand_sensing.date_week, average_of_demand_plan, demand_sensing.forecast,
       demand_sensing.forecast_lower, demand_sensing.forecast_upper, demand_sensing.wholesale_quantity_measure]
     fill_fields: [demand_sensing.date_week]
-    filters: {}
     sorts: [demand_sensing.date_week desc]
     limit: 500
     column_limit: 50
@@ -154,14 +153,13 @@
     height: 7
   - title: Temperature
     name: Temperature
-    model: cortex_demand_sensing
+    model: sap_cortex_demand_sensing
     explore: demand_sensing
     type: looker_line
     fields: [demand_sensing.date_week, demand_sensing.temperature, demand_sensing.forecast_temperature,
       average_of_moving_average, demand_sensing.wholesale_quantity_measure, average_of_demand_plan,
       demand_sensing.forecast, demand_sensing.forecast_upper, demand_sensing.forecast_lower]
     fill_fields: [demand_sensing.date_week]
-    filters: {}
     sorts: [demand_sensing.date_week desc]
     limit: 500
     column_limit: 50
@@ -242,14 +240,13 @@
     height: 7
   - title: Promo Differential
     name: Promo Differential
-    model: cortex_demand_sensing
+    model: sap_cortex_demand_sensing
     explore: demand_sensing
     type: looker_line
     fields: [demand_sensing.date_week, demand_sensing.wholesale_quantity_measure,
       average_of_is_promo, average_of_demand_plan_past, demand_sensing.forecast, demand_sensing.forecast_lower,
       demand_sensing.forecast_upper]
     fill_fields: [demand_sensing.date_week]
-    filters: {}
     sorts: [demand_sensing.date_week desc]
     limit: 500
     column_limit: 50
@@ -257,7 +254,7 @@
         expression: '', label: Average of Demand Plan, type: average, _kind_hint: measure,
         _type_hint: number}, {measure: average_of_is_promo, based_on: demand_sensing.is_promo,
         expression: '', label: Average of Is Promo, type: average, _kind_hint: measure,
-        _type_hint: number},{measure: average_of_demand_plan_past, based_on: demand_sensing.demand_plan_past,
+        _type_hint: number}, {measure: average_of_demand_plan_past, based_on: demand_sensing.demand_plan_past,
         expression: '', label: Average of Demand Plan Past, type: average, _kind_hint: measure,
         _type_hint: number}]
     x_axis_gridlines: false
@@ -292,11 +289,11 @@
             name: Forecast}, {axisId: demand_sensing.forecast_upper, id: demand_sensing.forecast_upper,
             name: Forecast Upper}, {axisId: demand_sensing.forecast_lower, id: demand_sensing.forecast_lower,
             name: Forecast Lower}], showLabels: true, showValues: true, unpinAxis: true,
-        tickDensity: default, tickDensityCustom: 5, type: linear},
-      {label: !!null '', orientation: right, series: [{axisId: average_of_is_promo,
-            id: average_of_is_promo, name: Wholesale Promotion}], showLabels: false,
-        showValues: false, maxValue: 1, minValue: 0, valueFormat: '0[>0];[<0]', unpinAxis: true,
-        tickDensity: default, tickDensityCustom: 5, type: linear}]
+        tickDensity: default, tickDensityCustom: 5, type: linear}, {label: !!null '',
+        orientation: right, series: [{axisId: average_of_is_promo, id: average_of_is_promo,
+            name: Wholesale Promotion}], showLabels: false, showValues: false, maxValue: 1,
+        minValue: 0, valueFormat: '0[>0];[<0]', unpinAxis: true, tickDensity: default,
+        tickDensityCustom: 5, type: linear}]
     series_types:
       average_of_is_promo: column
     series_colors:
@@ -329,7 +326,7 @@
     height: 7
   - title: New Tile
     name: New Tile
-    model: cortex_demand_sensing
+    model: sap_cortex_demand_sensing
     explore: demand_sensing
     type: single_value
     fields: [demand_sensing.thirteen_week_forecast]
@@ -428,7 +425,7 @@
     height: 3
   - title: New Tile
     name: New Tile (2)
-    model: cortex_demand_sensing
+    model: sap_cortex_demand_sensing
     explore: demand_sensing
     type: single_value
     fields: [demand_sensing.thirteen_week_sales_volume]
@@ -527,7 +524,7 @@
     height: 3
   - title: New Tile
     name: New Tile (3)
-    model: cortex_demand_sensing
+    model: sap_cortex_demand_sensing
     explore: demand_sensing
     type: single_value
     fields: [demand_sensing.fifty_two_week_sales_volume]
@@ -636,7 +633,7 @@
       type: dropdown_menu
       display: inline
       options: []
-    model: cortex_demand_sensing
+    model: sap_cortex_demand_sensing
     explore: demand_sensing
     listens_to_filters: []
     field: demand_sensing.product_name
@@ -650,7 +647,7 @@
       type: dropdown_menu
       display: inline
       options: []
-    model: cortex_demand_sensing
+    model: sap_cortex_demand_sensing
     explore: demand_sensing
     listens_to_filters: []
     field: demand_sensing.customer
@@ -664,7 +661,7 @@
       type: dropdown_menu
       display: inline
       options: []
-    model: cortex_demand_sensing
+    model: sap_cortex_demand_sensing
     explore: demand_sensing
     listens_to_filters: []
     field: demand_sensing.location
@@ -678,7 +675,3 @@
       type: relative_timeframes
       display: inline
       options: []
-    model: cortex_demand_sensing
-    explore: demand_sensing
-    listens_to_filters: []
-    field: demand_sensing.date_date
