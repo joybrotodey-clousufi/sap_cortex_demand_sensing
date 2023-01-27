@@ -14,8 +14,8 @@ view: correlation_table_pdt {
               ON
                 SalesOrders.Client_MANDT = Customers.Client_MANDT
                 AND SalesOrders.ShipToPartyItem_KUNNR = Customers.CustomerNumber_KUNNR
-            WHERE
-              SalesOrders.Client_MANDT = "@{CLIENT}"
+            # WHERE
+              # SalesOrders.Client_MANDT = "@{CLIENT}"
 
 
           )

@@ -24,8 +24,8 @@ view: demand_sensing_pdt {
   ON
     SalesOrders.Client_MANDT=Customers.Client_MANDT
     AND SalesOrders.ShipToPartyItem_KUNNR=Customers.CustomerNumber_KUNNR
-  WHERE
-    SalesOrders.Client_MANDT =  "@{CLIENT}"
+  # WHERE
+    # SalesOrders.Client_MANDT =  "@{CLIENT}"
   UNION DISTINCT
   SELECT
     DemandForecast.CatalogItemID AS Product,
@@ -38,7 +38,8 @@ view: demand_sensing_pdt {
     `@{GCP_PROJECT}.@{REPORTING_DATASET}.DemandForecast`DemandForecast
     INNER JOIN `@{GCP_PROJECT}.@{REPORTING_DATASET}.CustomersMD` CustomersMD
   ON CustomersMD.CustomerNumber_KUNNR=DemandForecast.CustomerId
-and CustomersMD.Client_MANDT= "@{CLIENT}" ),
+# and CustomersMD.Client_MANDT= "@{CLIENT}"
+),
   Sales AS (
   SELECT
     SalesOrders.Client_MANDT AS Client_MANDT,
@@ -74,7 +75,8 @@ and CustomersMD.Client_MANDT= "@{CLIENT}" ),
     `@{GCP_PROJECT}.@{REPORTING_DATASET}.DemandForecast` DemandForecast
     INNER JOIN `@{GCP_PROJECT}.@{REPORTING_DATASET}.CustomersMD` CustomersMD
   ON CustomersMD.CustomerNumber_KUNNR=DemandForecast.CustomerId
-and CustomersMD.Client_MANDT= "@{CLIENT}"),
+# and CustomersMD.Client_MANDT= "@{CLIENT}"
+),
 
   DemandPlan AS (
   SELECT
@@ -89,7 +91,8 @@ and CustomersMD.Client_MANDT= "@{CLIENT}"),
 INNER JOIN `@{GCP_PROJECT}.@{REPORTING_DATASET}.CustomersMD` CustomersMD
 
 ON CustomersMD.CustomerNumber_KUNNR=DemandPlan.CustomerId
-and CustomersMD.Client_MANDT= "@{CLIENT}"  ),
+# and CustomersMD.Client_MANDT= "@{CLIENT}"
+),
 
   Weather AS(
 SELECT
@@ -272,7 +275,7 @@ LEFT JOIN
   Materials
 ON
   Grid.product =Materials.MaterialNumber_MATNR
-  AND Materials.Client_MANDT= "@{CLIENT}"
+  # AND Materials.Client_MANDT= "@{CLIENT}"
   --AND Sales.Client_MANDT=Materials.Client_MANDT
 LEFT JOIN
   Trends
